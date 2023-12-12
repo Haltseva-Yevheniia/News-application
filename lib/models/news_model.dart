@@ -26,16 +26,16 @@ class NewsModel {
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
     return NewsModel(
-      author: json['author'],
-      title: json['title'],
-      description: json['description'],
-      url: json['url'],
-      source: json['source'],
-      image: json['image'],
-      category: json['category'],
-      language: json['language'],
-      country: json['country'],
-      publishedAt: json['published_at'],);
+      author: json['author'] ?? 'No author',
+      title: json['title'] ?? 'No title',
+      description: json['description'] ?? 'No description',
+      url: json['url'] ?? 'No url',
+      source: json['source'] ?? 'No source',
+      image: json['image'] ?? '',
+      category: json['category'] ?? '',
+      language: json['language'] ?? '',
+      country: json['country'] ?? '',
+      publishedAt: json['published_at'] ?? '',);
   }
 
 }
