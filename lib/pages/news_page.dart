@@ -13,6 +13,7 @@ class _NewsPageState extends State<NewsPage> {
     return Scaffold(
       appBar: AppBar(),
 
+
     );
   }
 }
