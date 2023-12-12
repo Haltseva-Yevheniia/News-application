@@ -35,7 +35,7 @@ class NewsModel {
       category: json['category'],
       language: json['language'],
       country: json['country'],
-      publishedAt: json['publishedAt'],);
+      publishedAt: json['published_at'],);
   }
 
 }
