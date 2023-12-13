@@ -5,18 +5,15 @@ void main() {
   runApp(const NewsApp());
 }
 
-
-class NewsApp extends StatelessWidget{
-
+class NewsApp extends StatelessWidget {
   const NewsApp({super.key});
 
   @override
-  Widget build (BuildContext context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: const NewsPage(),
     );
   }
-
 }
