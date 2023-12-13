@@ -61,21 +61,30 @@ class _NewsPageState extends State<NewsPage> {
                       children: [
                         Image.network(news.image,
                             width: MediaQuery.of(context).size.width,
-                            height: 150,
-                            fit: BoxFit.cover, errorBuilder:
+                            height: 80,
+                            //fit: BoxFit.cover,
+                            errorBuilder:
                                 (BuildContext context, Object exception,
                                     StackTrace? stackTrace) {
-                          return const SizedBox(
-                            width: 150,
-                            height: 150,
+                          return Image.asset(
+                            'assets/images/no_image.jpg',
+                            width: MediaQuery.of(context).size.width,
+                            height: 80,
                           );
                         }),
-                        Text(
-                          news.title,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                          ),
+                        ListTile(
+                          title: SizedBox(
+                            height: 50,
+                            child: ListView(
+                              children: [
+                                Text(news.title, style: TextStyle(
+                                fontSize: 12, fontStyle: FontStyle.italic,
+                              ),),
+                            ]
+                          ),),
+                          subtitle: Text('Category: ${news.category}', style: TextStyle(
+                            fontSize: 10,
+                          ),),
                         ),
                       ],
                     ),
