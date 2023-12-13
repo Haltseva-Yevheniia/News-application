@@ -1,4 +1,3 @@
-
 class NewsModel {
   final String author;
   final String title;
@@ -35,7 +34,7 @@ class NewsModel {
       category: json['category'] ?? '',
       language: json['language'] ?? '',
       country: json['country'] ?? '',
-      publishedAt: json['published_at'] ?? '',);
+      publishedAt: json['published_at'] ?? '',
+    );
   }
-
 }
