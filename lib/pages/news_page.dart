@@ -48,8 +48,20 @@ class _NewsPageState extends State<NewsPage> {
                     padding: const EdgeInsets.all(10.0),
                     child: Column(
                       children: [
-                        Image.network(news.image, fit: BoxFit.cover,),
-                      Text(news.title),
+                        Image.network(
+
+                          news.image,
+                          width: MediaQuery.of(context).size.width,
+                          height: 150,
+                          fit: BoxFit.cover,
+    errorBuilder:
+    (BuildContext context, Object exception, StackTrace? stackTrace) {
+    return const SizedBox(
+    width: 150,
+    height: 150,
+    );}
+                        ),
+                        Text(news.title),
                       ],
                     ),
                   );
