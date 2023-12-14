@@ -23,8 +23,11 @@ class DetailNewPage extends StatelessWidget {
               Image.network(news.image,
                   width: MediaQuery.of(context).size.width,
                   //height: 200,
-                  fit: BoxFit.cover, errorBuilder: (BuildContext context,
-                      Object exception, StackTrace? stackTrace) {
+                  fit: BoxFit.cover, errorBuilder: (
+                BuildContext context,
+                Object exception,
+                StackTrace? stackTrace,
+              ) {
                 return Image.asset(
                   'assets/images/no_image.jpg',
                   width: MediaQuery.of(context).size.width,
@@ -51,15 +54,18 @@ class DetailNewPage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-              'Published: ${DateFormat('dd/MM/yyyy').format(
-              DateTime.parse(news.publishedAt))}',
+                'Published: ${DateFormat('dd/MM/yyyy').format(DateTime.parse(news.publishedAt))}',
                 textAlign: TextAlign.left,
-                ),
+              ),
               const SizedBox(height: 20),
-Center(
-  child: Text('You can find more details at:', style: TextStyle( fontStyle: FontStyle.italic,
-  ), ),
-),
+              Center(
+                child: Text(
+                  'You can find more details at:',
+                  style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ),
               TextButton(
                 onPressed: () => clickUrl(news.url),
                 child: Text(

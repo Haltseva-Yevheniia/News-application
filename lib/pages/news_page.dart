@@ -65,9 +65,11 @@ class _NewsPageState extends State<NewsPage> {
                             width: MediaQuery.of(context).size.width,
                             height: 80,
                             //fit: BoxFit.cover,
-                            errorBuilder:
-                                (BuildContext context, Object exception,
-                                    StackTrace? stackTrace) {
+                            errorBuilder: (
+                          BuildContext context,
+                          Object exception,
+                          StackTrace? stackTrace,
+                        ) {
                           return Image.asset(
                             'assets/images/no_image.jpg',
                             width: MediaQuery.of(context).size.width,
@@ -77,16 +79,22 @@ class _NewsPageState extends State<NewsPage> {
                         ListTile(
                           title: SizedBox(
                             height: 50,
-                            child: ListView(
-                              children: [
-                                Text(news.title, style: TextStyle(
-                                fontSize: 12, fontStyle: FontStyle.italic,
-                              ),),
-                            ]
-                          ),),
-                          subtitle: Text('Category: ${news.category}', style: TextStyle(
-                            fontSize: 10,
-                          ),),
+                            child: ListView(children: [
+                              Text(
+                                news.title,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                            ]),
+                          ),
+                          subtitle: Text(
+                            'Category: ${news.category}',
+                            style: TextStyle(
+                              fontSize: 10,
+                            ),
+                          ),
                         ),
                       ],
                     ),
