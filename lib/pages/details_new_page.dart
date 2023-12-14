@@ -17,28 +17,36 @@ class DetailNewPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 10),
               Image.network(news.image,
                   width: MediaQuery.of(context).size.width,
-                  height: 150,
-                  fit: BoxFit.cover, errorBuilder: (BuildContext context,
-                      Object exception, StackTrace? stackTrace) {
-                return const SizedBox(
-                  width: 150,
-                  height: 150,
+                  //height: 200,
+                  fit: BoxFit.cover, errorBuilder: (
+                BuildContext context,
+                Object exception,
+                StackTrace? stackTrace,
+              ) {
+                return Image.asset(
+                  'assets/images/no_image.jpg',
+                  width: MediaQuery.of(context).size.width,
+                  height: 80,
                 );
               }),
               const SizedBox(height: 10),
               Text(
                 news.title,
+                textAlign: TextAlign.justify,
                 style: const TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 20,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 news.description,
+                textAlign: TextAlign.justify,
                 style: const TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 20,
@@ -46,8 +54,16 @@ class DetailNewPage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                DateFormat('dd/MM/yyyy').format(
-                  DateTime.parse(news.publishedAt),
+                'Published: ${DateFormat('dd/MM/yyyy').format(DateTime.parse(news.publishedAt))}',
+                textAlign: TextAlign.left,
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: Text(
+                  'You can find more details at:',
+                  style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
               ),
               TextButton(
