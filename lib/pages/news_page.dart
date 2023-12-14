@@ -82,7 +82,7 @@ class _NewsPageState extends State<NewsPage> {
                             child: ListView(children: [
                               Text(
                                 news.title,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 12,
                                   fontStyle: FontStyle.italic,
                                 ),
@@ -91,7 +91,7 @@ class _NewsPageState extends State<NewsPage> {
                           ),
                           subtitle: Text(
                             'Category: ${news.category}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 10,
                             ),
                           ),
