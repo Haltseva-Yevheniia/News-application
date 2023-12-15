@@ -19,7 +19,7 @@ class DetailNewPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Image.network(news.image,
                   width: MediaQuery.of(context).size.width,
                   //height: 200,
@@ -58,7 +58,7 @@ class DetailNewPage extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
               const SizedBox(height: 20),
-              Center(
+              const Center(
                 child: Text(
                   'You can find more details at:',
                   style: TextStyle(
